@@ -3,6 +3,9 @@ const ObjectId = require ('mongodb').ObjectId;
 
 const getAll = async (req, res)=>{
 
+     // swaggerAutogen.tags=["Users"]
+
+
 const result = await mongodb.getDatabase().db().collection('users').find();
 
 result.toArray().then((users)=>{
@@ -14,6 +17,9 @@ res.status(200).json(users);
 }
 
 const getSingle = async (req, res)=>{
+
+     // swaggerAutogen.tags=["Users"]
+
 
     const userId = new ObjectId(req.params.id);
 const result = await mongodb.getDatabase().db().collection('users').find({_id : userId});
@@ -28,6 +34,8 @@ res.status(200).json(users[0]);
 
 
 const createUser = async (req, res)=> {
+
+    // swaggerAutogen.tags=["Users"]
 
 const user = {
   email:req.body.email,
@@ -51,6 +59,8 @@ else{
 
 const updateUser = async (req, res)=> {
 
+     // swaggerAutogen.tags=["Users"]
+
 const userId = new ObjectId (req.params.id);
 const user = {
   email:req.body.email,
@@ -72,6 +82,9 @@ else{
 }
 
 const deleteUser = async (req,res)=>{
+
+     // swaggerAutogen.tags=["Users"]
+
     const userId = new ObjectId (req.params.id);
     const response = await mongodb.getDatabase().db().collection('users').deleteOne({_id:userId});
     if(response.deletedCount > 0){
