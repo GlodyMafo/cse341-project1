@@ -5,10 +5,9 @@
     "description": "Projoct1 Contact",
     "version": "1.0.0"
   },
-  "host": "localhost:5001",
+  "host": "https://cse341-project1-ml6z.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
